@@ -15,12 +15,12 @@ _ = require 'underscore'
 
 module.exports = (robot) ->
 
-  robot.respond /pug me|pug bomb( (\d+))?/i, (msg) ->
+  robot.respond /tits me|tits bomb( (\d+))?/i, (msg) ->
     count = msg.match[2]
     if not count
       count = if (msg.match.input.match /bomb/i)? then 5 else 1
 
-    msg.http("http://www.reddit.com/r/pugs.json?sort=top&t=week")
+    msg.http("http://www.reddit.com/r/tits.json?sort=top&t=week")
     .get() (err, res, body) ->
       try
         pugs = getPugs(body, count)
